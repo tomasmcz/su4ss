@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# pip install git+https://github.com/pixelogik/NearPy
 # wget http://www.cs.cmu.edu/afs/cs/project/theo-11/www/naive-bayes/20_newsgroups.tar.gz
 # tar zxvf 20_newsgroups.tar.gz
 # rm 20_newsgroups.tar.gz
