@@ -28,9 +28,9 @@
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
-     inkscape:window-width="1301"
+     inkscape:window-width="1311"
      inkscape:window-height="744"
-     inkscape:window-x="65"
+     inkscape:window-x="55"
      inkscape:window-y="24"
      inkscape:window-maximized="1" />
   <defs
@@ -871,7 +871,7 @@
          sodipodi:role="line"
          id="tspan5782"
          x="110.95525"
-         y="945.32916">odvěsna</tspan></text>
+         y="945.32916">přepona</tspan></text>
     <text
        sodipodi:linespacing="125%"
        id="text5784"
@@ -882,7 +882,7 @@
          y="1004.4742"
          x="89.740959"
          id="tspan5786"
-         sodipodi:role="line">přepona</tspan></text>
+         sodipodi:role="line">odvěsna</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:8.46598244px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#0044aa;fill-opacity:1;stroke:none;font-family:TeX Gyre Termes;-inkscape-font-specification:Sans"
@@ -893,6 +893,6 @@
          sodipodi:role="line"
          id="tspan5790"
          x="20.09812"
-         y="958.27979">přepona</tspan></text>
+         y="958.27979">odvěsna</tspan></text>
   </g>
 </svg>
