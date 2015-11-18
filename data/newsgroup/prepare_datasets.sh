@@ -13,26 +13,15 @@ function get_text {
 
 for FILE in $(find . -regex '.*/[0-9]+'); do
     cat $FILE | get_text   
-done | sort | uniq -c | sort -rn | sed -e "s/  *//" | cut -f2 -d" "  > freq_list.tmp
-
-for I in 500 1000 2000 3000 4000; do
-    head -n $I freq_list.tmp | sort | diff - stop_words.txt | grep "<" |\
-        sed -e "s/< //" > feature-words-$I.txt
-done
-rm freq_list.tmp
+done | sort | uniq -c | sort -rn | sed -e "s/  *//" | cut -f2 -d" " |\
+    diff - stop_words.txt | grep "<" | sed -e "s/< //" | head -n 4000 > feature_words.txt
 
 for CATEGORY in $(find 20_newsgroups/ -mindepth 1 -type d); do
     LABEL=$(echo $CATEGORY | sed -e "s@/\$@@;s@.*/@@")
     for FILE in $(find $CATEGORY -regex ".*/[0-9]+"); do
         cat $FILE | get_text |\
-        diff - stop_words.txt | grep "<" | sed -e "s/< //" > tmp.txt
-        for I in 500 1000 2000 3000 4000; do
-            perl join.pl $I < tmp.txt | sed -e "s@\$@$LABEL\n@" >> newsgroup-$I.tmp
-        done
+        diff - stop_words.txt | grep "<" | sed -e "s/< //" |\
+        perl join.pl | sed -e "s@\$@$LABEL,$FILE\n@" >> newsgroup.data
     done
 done
 
-for I in 500 1000 2000 3000 4000; do
-    sort -R newsgroup-$I.tmp > newsgroup-$I.data
-    rm newsgroup-$I.tmp
-done
